@@ -1,19 +1,17 @@
 import numpy as np
-
-np_baseball = np.loadtxt('chuong3\\baseball_2D.txt', delimiter=',')
-
-
-print("Dòng thứ 50 trong np_baseball:")
-print(np_baseball[49])
-
-print("\nChiều cao của các cầu thủ từ dòng 124 trở đi:")
-print(np_baseball[123:, 0]) 
-
-
-mean_height = np.mean(np_baseball[:, 0])  
-print("\nChiều cao trung bình của các cầu thủ:")
-print(mean_height)
-
-correlation = np.corrcoef(np_baseball[:, 0], np_baseball[:, 1])
-print("\nHệ số tương quan giữa chiều cao và cân nặng:")
-print(correlation[0, 1])
+#1
+np_baseball = np.loadtxt('D:\\baitapvandungchuong3\\baseball_2D.txt', delimiter=',',encoding='utf-8-sig')
+print(np_baseball)
+#2
+print("in gia tri thu 50: ",np_baseball[50])
+#3
+np_weight = np_baseball[::,:1]
+print(np_weight)
+#4
+print("chiều cao của vận động viên thứ 124: ",np_baseball[124][1:])
+#5
+np_height = np_baseball[::,1:]
+print("chiều cao trung bình là: ",np.mean(np_height))
+print("cân nặng trung bình là: ",np.mean(np_weight))
+#6
+print("em thấy chiều cao của cầu thủ tỉ lệ thuận với cân nặng ")
